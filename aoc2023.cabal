@@ -1,0 +1,243 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           aoc2023
+version:        0.1.0.0
+category:       Web
+homepage:       https://github.com/alexjercan/aoc2023#readme
+author:         Alex Jercan
+maintainer:     alex_jercan27@yahoo.com
+copyright:      2023 Alex Jercan
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+executable day01
+  main-is: Day01.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day01
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day02
+  main-is: Day02.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day02
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day03
+  main-is: Day03.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day03
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day04
+  main-is: Day04.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day04
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day05
+  main-is: Day05.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day05
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day06
+  main-is: Day06.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day06
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day07
+  main-is: Day07.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day07
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day08
+  main-is: Day08.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day08
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day09
+  main-is: Day09.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day09
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day10
+  main-is: Day10.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day10
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day11
+  main-is: Day11.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day11
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day12
+  main-is: Day12.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day12
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day13
+  main-is: Day13.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day13
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day14
+  main-is: Day14.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day14
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day15
+  main-is: Day15.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day15
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day16
+  main-is: Day16.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day16
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day17
+  main-is: Day17.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day17
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day18
+  main-is: Day18.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day18
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day19
+  main-is: Day19.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day19
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day20
+  main-is: Day20.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day20
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day21
+  main-is: Day21.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day21
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day22
+  main-is: Day22.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day22
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day23
+  main-is: Day23.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day23
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day24
+  main-is: Day24.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day24
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable day25
+  main-is: Day25.hs
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day25
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
