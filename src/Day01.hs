@@ -4,24 +4,15 @@ import Data.Char (digitToInt, isDigit)
 import Data.List (isPrefixOf, tails)
 import Data.Maybe
 
-tryToDigit1 :: String -> Maybe Int
-tryToDigit1 [] = Nothing
-tryToDigit1 (x : _)
+maybeDigit1 :: String -> Maybe Int
+maybeDigit1 [] = Nothing
+maybeDigit1 (x : _)
   | isDigit x = Just $ digitToInt x
   | otherwise = Nothing
 
-firstAndLastDigitsNum :: (String -> Maybe Int) -> String -> Int
-firstAndLastDigitsNum tryToDigit input = first * 10 + lst
-  where
-    first = head $ mapMaybe tryToDigit (tails input)
-    lst = head $ mapMaybe tryToDigit (reverse $ tails input)
-
-part1 :: String -> String
-part1 input = show $ sum $ map (firstAndLastDigitsNum tryToDigit1) $ lines input
-
-tryToDigit2 :: String -> Maybe Int
-tryToDigit2 [] = Nothing
-tryToDigit2 input@(x : _)
+maybeDigit2 :: String -> Maybe Int
+maybeDigit2 [] = Nothing
+maybeDigit2 input@(x : _)
   | "one" `isPrefixOf` input = Just 1
   | "two" `isPrefixOf` input = Just 2
   | "three" `isPrefixOf` input = Just 3
@@ -34,8 +25,16 @@ tryToDigit2 input@(x : _)
   | isDigit x = Just $ digitToInt x
   | otherwise = Nothing
 
+firstAndLastDigitsNum :: (String -> Maybe Int) -> String -> Int
+firstAndLastDigitsNum maybeDigit input = head digits * 10 + last digits
+  where
+    digits = mapMaybe maybeDigit $ tails input
+
+part1 :: String -> String
+part1 input = show $ sum $ map (firstAndLastDigitsNum maybeDigit1) $ lines input
+
 part2 :: String -> String
-part2 input = show $ sum $ map (firstAndLastDigitsNum tryToDigit2) $ lines input
+part2 input = show $ sum $ map (firstAndLastDigitsNum maybeDigit2) $ lines input
 
 solve :: String -> String
 solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input
