@@ -24,6 +24,7 @@ executable day01
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day01
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day02
@@ -33,6 +34,7 @@ executable day02
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day02
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day03
@@ -42,6 +44,7 @@ executable day03
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day03
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day04
@@ -51,6 +54,7 @@ executable day04
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day04
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day05
@@ -60,6 +64,7 @@ executable day05
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day05
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day06
@@ -69,6 +74,7 @@ executable day06
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day06
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day07
@@ -78,6 +84,7 @@ executable day07
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day07
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day08
@@ -87,6 +94,7 @@ executable day08
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day08
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day09
@@ -96,6 +104,7 @@ executable day09
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day09
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day10
@@ -105,6 +114,7 @@ executable day10
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day10
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day11
@@ -114,6 +124,7 @@ executable day11
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day11
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day12
@@ -123,6 +134,7 @@ executable day12
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day12
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day13
@@ -132,6 +144,7 @@ executable day13
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day13
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day14
@@ -141,6 +154,7 @@ executable day14
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day14
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day15
@@ -150,6 +164,7 @@ executable day15
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day15
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day16
@@ -159,6 +174,7 @@ executable day16
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day16
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day17
@@ -168,6 +184,7 @@ executable day17
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day17
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day18
@@ -177,6 +194,7 @@ executable day18
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day18
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day19
@@ -186,6 +204,7 @@ executable day19
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day19
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day20
@@ -195,6 +214,7 @@ executable day20
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day20
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day21
@@ -204,6 +224,7 @@ executable day21
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day21
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day22
@@ -213,6 +234,7 @@ executable day22
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day22
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day23
@@ -222,6 +244,7 @@ executable day23
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day23
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day24
@@ -231,6 +254,7 @@ executable day24
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day24
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
 
 executable day25
@@ -240,4 +264,5 @@ executable day25
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day25
   build-depends:
       base >=4.7 && <5
+    , parsec
   default-language: Haskell2010
