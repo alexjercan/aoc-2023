@@ -1,7 +1,7 @@
 module TestDay03 where
 
-import Test.Hspec
 import Day03
+import Test.Hspec
 
 input = "467..114..\n...*......\n..35..633.\n......#...\n617*......\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598.."
 
@@ -13,8 +13,8 @@ test2 = part2 input `shouldBe` "467835"
 
 test :: IO ()
 test = hspec $ do
-  describe "part1" $ do
-    it "should work for the examples" test1
+    describe "part1" $ do
+        it "should work for the examples" test1
 
-  describe "part2" $ do
-    it "should work for the examples" test2
+    describe "part2" $ do
+        it "should work for the examples" test2
