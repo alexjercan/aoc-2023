@@ -1,4 +1,4 @@
-module Day02 (main) where
+module Day02 (main, part1, part2) where
 
 import Text.Parsec ((<|>))
 import qualified Text.Parsec as P

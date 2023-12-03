@@ -1,4 +1,4 @@
-module Day03 (main) where
+module Day03 (main, part1, part2) where
 
 import Data.Char (isDigit)
 import Data.List (nub)
@@ -28,7 +28,12 @@ isSymbol :: Char -> Bool
 isSymbol = (&&) <$> (/= '.') <*> (not . isDigit)
 
 solveLine :: Map -> Int -> [(Int, Char, (Int, Int))]
-solveLine m y = map generate $ filter hasSymbol $ uncurry zip $ result $ foldl readNumber (0, [], [], []) indices
+solveLine m y =
+    map generate $
+        filter hasSymbol $
+            uncurry zip $
+                result $
+                    foldl readNumber (0, [], [], []) indices
   where
     w = width m
     indices = [0 .. w - 1]
@@ -49,29 +54,28 @@ solveLine m y = map generate $ filter hasSymbol $ uncurry zip $ result $ foldl r
         bs = nub $ concatMap (\x -> blanket m (x, y)) cs
         pos = head $ filter (isSymbol . at m) bs
 
-checkGear :: (Int, Char, (Int, Int)) -> Bool
-checkGear (_, g, _) = g == '*'
-
-buildGears :: [(Int, Char, (Int, Int))] -> M.Map (Int, Int) [Int]
-buildGears = foldl insert M.empty
-  where
-    insert :: M.Map (Int, Int) [Int] -> (Int, Char, (Int, Int)) -> M.Map (Int, Int) [Int]
-    insert m (c, _, pos) = M.insertWith (++) pos [c] m
-
-applyGears :: M.Map (Int, Int) [Int] -> Int
-applyGears = sum . map product . filter (\gs -> length gs == 2) . M.elems
-
-solveMap :: Map -> [Int]
-solveMap m = map (\(a, _, _) -> a) $ concatMap (solveLine m) [0 .. height m - 1]
-
-solveMap' :: Map -> Int
-solveMap' m = applyGears $ buildGears $ concatMap (filter checkGear . solveLine m) [0 .. height m - 1]
-
 part1 :: String -> String
 part1 = show . sum . solveMap . parse
+  where
+    solveMap :: Map -> [Int]
+    solveMap m = map (\(a, _, _) -> a) $ concatMap (solveLine m) [0 .. height m - 1]
 
 part2 :: String -> String
-part2 = show . solveMap' . parse
+part2 = show . sum . solveMap . parse
+  where
+    solveMap :: Map -> [Int]
+    solveMap m =
+        map product $
+            filter validGear $
+                M.elems $
+                    foldl buildGears M.empty $
+                        concatMap (filter checkGear . solveLine m) [0 .. height m - 1]
+    checkGear :: (Int, Char, (Int, Int)) -> Bool
+    checkGear (_, g, _) = g == '*'
+    buildGears :: M.Map (Int, Int) [Int] -> (Int, Char, (Int, Int)) -> M.Map (Int, Int) [Int]
+    buildGears m (c, _, pos) = M.insertWith (++) pos [c] m
+    validGear :: [Int] -> Bool
+    validGear gs = length gs == 2
 
 solve :: String -> String
 solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input

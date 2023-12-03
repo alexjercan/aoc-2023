@@ -1,4 +1,4 @@
-module Day01 (main) where
+module Day01 (main, part1, part2) where
 
 import Data.Char (digitToInt, isDigit)
 import Data.List (isPrefixOf, tails)

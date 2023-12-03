@@ -30,6 +30,8 @@ executable day01
 
 executable day02
   main-is: Day02.hs
+  other-modules:
+      Util.Parser
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day02
@@ -289,5 +291,52 @@ executable day25
   build-depends:
       base >=4.7 && <5
     , containers
+    , parsec
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Day01
+      Day02
+      Day03
+      Day04
+      Day05
+      Day06
+      Day07
+      Day08
+      Day09
+      Day10
+      Day11
+      Day12
+      Day13
+      Day14
+      Day15
+      Day16
+      Day17
+      Day18
+      Day19
+      Day20
+      Day21
+      Day22
+      Day23
+      Day24
+      Day25
+      Util.Parser
+      TestDay01
+      TestDay02
+      TestDay03
+      Paths_aoc2023
+  autogen-modules:
+      Paths_aoc2023
+  hs-source-dirs:
+      src
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , hspec
     , parsec
   default-language: Haskell2010
