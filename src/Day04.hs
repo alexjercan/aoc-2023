@@ -1,6 +1,5 @@
 module Day04 (main, part1, part2) where
 
-import Data.List (sort)
 import qualified Text.Parsec as P
 import Util.Parser (Parser, parse)
 
@@ -13,21 +12,13 @@ cardP = do
     ws <- P.many1 (read <$> P.many1 P.digit <* P.spaces)
     _ <- P.spaces *> P.char '|' <* P.spaces
     ns <- P.many1 (read <$> P.many1 P.digit <* P.spaces)
-    pure $ Card (sort ws) (sort ns)
+    pure $ Card ws ns
 
 parseCards :: String -> [Card]
 parseCards = parse (P.many1 cardP)
 
 matches :: Card -> Int
-matches (Card winning numbers) = go winning numbers 0
-  where
-    go [] [] acc = acc
-    go _ [] acc = acc
-    go [] _ acc = acc
-    go ws'@(w : ws) ns'@(n : ns) acc
-        | w == n = go ws ns (acc + 1)
-        | w > n = go ws' ns acc
-        | otherwise = go ws ns' acc
+matches (Card winning numbers) = length $ filter (`elem` numbers) winning
 
 score :: Int -> Int
 score m = if m == 0 then 0 else 2 ^ (m - 1)
