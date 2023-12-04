@@ -13,8 +13,9 @@ test2 = part2 input `shouldBe` "467835"
 
 test :: IO ()
 test = hspec $ do
-    describe "part1" $ do
-        it "should work for the examples" test1
+    describe "day03" $ do
+        describe "part1" $ do
+            it "should work for the examples" test1
 
-    describe "part2" $ do
-        it "should work for the examples" test2
+        describe "part2" $ do
+            it "should work for the examples" test2

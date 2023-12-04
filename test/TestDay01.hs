@@ -11,8 +11,9 @@ test2 = part2 "two1nine\neightwothree\nabcone2threexyz\nxtwone3four\n4nineeights
 
 test :: IO ()
 test = hspec $ do
-    describe "part1" $ do
-        it "should work for the examples" test1
+    describe "day01" $ do
+        describe "part1" $ do
+            it "should work for the examples" test1
 
-    describe "part2" $ do
-        it "should work for the examples" test2
+        describe "part2" $ do
+            it "should work for the examples" test2

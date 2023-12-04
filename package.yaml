@@ -46,7 +46,7 @@ executables:
   day04:
     source-dirs:     src
     main:            Day04
-    other-modules:   []
+    other-modules:   [Util.Parser]
 
   day05:
     source-dirs:     src
