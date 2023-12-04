@@ -78,7 +78,7 @@ part2 = show . sum . solveMap . parse
     validGear gs = length gs == 2
 
 solve :: String -> String
-solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input
+solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
 
 main :: IO ()
 main = interact solve

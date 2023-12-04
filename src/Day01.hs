@@ -37,7 +37,7 @@ part2 :: String -> String
 part2 input = show $ sum $ map (firstAndLastDigitsNum maybeDigit2) $ lines input
 
 solve :: String -> String
-solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input
+solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
 
 main :: IO ()
 main = interact solve

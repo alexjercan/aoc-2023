@@ -37,7 +37,7 @@ part2 :: String -> String
 part2 = show . count . parseCards
 
 solve :: String -> String
-solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input
+solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
 
 main :: IO ()
 main = interact solve
