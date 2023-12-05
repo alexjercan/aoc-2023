@@ -4,6 +4,17 @@ Advent of Code 2023 in Haskell
 
 ### Quickstart
 
+To download the puzzle inputs, copy the `.env.example` file into `.env` and
+fill in the session with your cookie from the aoc website. Then you can run
+
+Then run the main script to download and solve all the puzzles.
+
+```console
+./aoc.sh
+```
+
+### All Usages
+
 To run a day and read the input from stdin use
 
 ```
@@ -12,10 +23,7 @@ stack run day%%
 
 where the format of the day is 2 digits (01, 02, ... 20, 21)
 
-### All Usages
-
-To download the puzzle inputs, copy the `.env.example` file into `.env` and
-fill in the session with your cookie from the aoc website. Then you can run
+You can also just download the input
 
 ```console
 ./get
@@ -41,5 +49,5 @@ To run one day in particular you can run
 make Day%
 ```
 
-where `%` is the day number with 2 digits (01, 02, ... 20, 21)
-
+where `%` is the day number with 2 digits (01, 02, ... 20, 21). This will read
+the input that you get using `get`.

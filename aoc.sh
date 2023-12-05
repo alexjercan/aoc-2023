@@ -26,3 +26,6 @@ stack exec day03 < input/day03.input
 
 echo -e "${IWhite}--- Day 4: Scratchcards ---${Color_Off}"
 stack exec day04 < input/day04.input
+
+echo -e "${IRed}--- Day 5: If You Give A Seed A Fertilizer ----${Color_Off}"
+stack exec day05 < input/day05.input
