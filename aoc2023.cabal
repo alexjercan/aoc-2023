@@ -26,6 +26,7 @@ executable day01
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day02
@@ -39,6 +40,7 @@ executable day02
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day03
@@ -50,6 +52,7 @@ executable day03
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day04
@@ -63,6 +66,7 @@ executable day04
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day05
@@ -74,6 +78,7 @@ executable day05
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day06
@@ -85,6 +90,7 @@ executable day06
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day07
@@ -96,6 +102,7 @@ executable day07
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day08
@@ -107,6 +114,7 @@ executable day08
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day09
@@ -118,6 +126,7 @@ executable day09
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day10
@@ -129,6 +138,7 @@ executable day10
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day11
@@ -140,6 +150,7 @@ executable day11
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day12
@@ -151,6 +162,7 @@ executable day12
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day13
@@ -162,6 +174,7 @@ executable day13
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day14
@@ -173,6 +186,7 @@ executable day14
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day15
@@ -184,6 +198,7 @@ executable day15
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day16
@@ -195,6 +210,7 @@ executable day16
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day17
@@ -206,6 +222,7 @@ executable day17
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day18
@@ -217,6 +234,7 @@ executable day18
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day19
@@ -228,6 +246,7 @@ executable day19
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day20
@@ -239,6 +258,7 @@ executable day20
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day21
@@ -250,6 +270,7 @@ executable day21
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day22
@@ -261,6 +282,7 @@ executable day22
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day23
@@ -272,6 +294,7 @@ executable day23
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day24
@@ -283,6 +306,7 @@ executable day24
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 executable day25
@@ -294,6 +318,7 @@ executable day25
       base >=4.7 && <5
     , containers
     , parsec
+    , split
   default-language: Haskell2010
 
 test-suite spec
@@ -330,6 +355,7 @@ test-suite spec
       TestDay02
       TestDay03
       TestDay04
+      TestDay05
       Paths_aoc2023
   autogen-modules:
       Paths_aoc2023
@@ -342,4 +368,5 @@ test-suite spec
     , containers
     , hspec
     , parsec
+    , split
   default-language: Haskell2010
