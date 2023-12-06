@@ -1,20 +1,20 @@
-module TestDay03 (test) where
+module TestDay06 (test) where
 
-import Day03
+import Day06
 import Test.Hspec
 
 input :: String
-input = "467..114..\n...*......\n..35..633.\n......#...\n617*......\n.....+.58.\n..592.....\n......755.\n...$.*....\n.664.598.."
+input = "Time:      7  15   30\nDistance:  9  40  200"
 
 test1 :: Expectation
-test1 = part1 input `shouldBe` "4361"
+test1 = part1 input `shouldBe` "288"
 
 test2 :: Expectation
-test2 = part2 input `shouldBe` "467835"
+test2 = part2 input `shouldBe` "71503"
 
 test :: IO ()
 test = hspec $ do
-    describe "day03" $ do
+    describe "day06" $ do
         describe "part1" $ do
             it "should work for the examples" test1
 

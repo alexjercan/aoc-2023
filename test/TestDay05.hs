@@ -1,8 +1,9 @@
-module TestDay05 where
+module TestDay05 (test) where
 
 import Day05
 import Test.Hspec
 
+input :: String
 input =
     unlines
         [ "seeds: 79 14 55 13"
