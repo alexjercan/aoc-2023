@@ -7,6 +7,7 @@ import TestDay04
 import TestDay05
 import TestDay06
 import TestDay07
+import TestDay08
 
 main :: IO ()
 main = do
@@ -17,3 +18,4 @@ main = do
     TestDay05.test
     TestDay06.test
     TestDay07.test
+    TestDay08.test
