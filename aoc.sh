@@ -48,3 +48,6 @@ stack exec day06 < input/day06.input
 
 echo -e "${IGreen}--- Day 7: Camel Cards ---${Color_Off}"
 stack exec day07 < input/day07.input
+
+echo -e "${IRed}--- Day 8: Haunted Wasteland ---${Color_Off}"
+stack exec day08 < input/day08.input
