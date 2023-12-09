@@ -6,19 +6,17 @@ parse = map (map read . words) . lines
 diff :: [Int] -> [Int]
 diff = zipWith (-) <$> tail <*> id
 
-prediction :: (Int -> [Int] -> Int) -> [Int] -> Int
-prediction f xs = foldl f 0 $ fst $ until stop step ([], xs)
+prediction :: [Int] -> Int
+prediction xs = fst $ until stop step (0, xs)
   where
-    step (ps, ys) = (ys : ps, diff ys)
+    step (p, ys) = (p + last ys, diff ys)
     stop (_, ys) = all (== 0) ys
 
 part1 :: String -> String
-part1 = show . sum . map (prediction merge) . parse
-    where merge acc xs = acc + last xs
+part1 = show . sum . map prediction . parse
 
 part2 :: String -> String
-part2 = show . sum . map (prediction merge) . parse
-    where merge acc xs = head xs - acc
+part2 = show . sum . map (prediction . reverse) . parse
 
 solve :: String -> String
 solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
