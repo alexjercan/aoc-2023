@@ -1,0 +1,13 @@
+1. remove all the letters
+2. duplicate the first digit (this is used because there are cases when we only have one digit in the entire string and we need 2)
+3. get the first and the last digits
+4. replace newlines with `+`
+5. delete the last `+`
+6. delete the line (will move it into the default register)
+7. open the expression register with `ctrl+r` then `=` in insert mode (IDK how to show that)
+8. paste the content of the default register with `ctrl+r` then `"`
+9. press enter and you should have the answer
+
+```
+:%s/[a-z]//g:%s/^\(.\)\(.*\)$/\1\1\2/:%s/^\(.\).*\(.\)$/\1\2/:%s/\n/+/$xddi=""+yy
+```
