@@ -1,6 +1,6 @@
 module Day10 (main, part1, part2) where
 
-import Control.Arrow ((&&&))
+import qualified Data.Map as M
 
 findS :: [String] -> (Int, Int)
 findS input = head $ filter (\(x, y) -> (input !! y) !! x == 'S') [(x, y) | x <- [0 .. length (head input) - 1], y <- [0 .. length input - 1]]
@@ -106,45 +106,50 @@ pipeNeighbors input (x, y) = filter check $ validDirs input (x, y)
   where
     check (dx, dy) = checkPipe (at input (x, y)) (at input (x + dx, y + dy)) (deltaToDir (dx, dy))
 
-dfs :: [String] -> [(Int, Int)] -> [(Int, Int)] -> [(Int, Int)]
-dfs _ [] acc = acc
-dfs input ((x, y) : queue) acc
-    | (x, y) `elem` acc = dfs input queue acc
-    | otherwise = dfs input queue' acc'
+bfs :: [String] -> [(Int, Int)] -> [(Int, Int)] -> [(Int, Int)]
+bfs _ [] acc = acc
+bfs input ((x, y) : queue) acc
+    | (x, y) `elem` acc = bfs input queue acc
+    | otherwise = bfs input queue' acc'
   where
     neighbors = map add $ pipeNeighbors input (x, y)
     queue' = queue ++ neighbors
     acc' = (x, y) : acc
     add (dx, dy) = (x + dx, y + dy)
 
-mkMap :: [String] -> [(Int, Int)] -> [((Int, Int), Char)]
-mkMap input = map (id &&& at input)
-
-isInPolygon :: [((Int, Int), Char)] -> (Int, Int) -> (Int, Int) -> Bool
-isInPolygon poly (w, h) (sx, sy) = odd direction
+mkCrosses :: [String] -> [(Int, Int)] -> (Int, Int) -> M.Map (Int, Int) Int -> (Int, Int) -> M.Map (Int, Int) Int
+mkCrosses m poly (w, h) acc (sx, sy) = M.insert (sx, sy) direction acc
   where
-    direction = length $ filter (not . corner . snd) $ filter ((`elem` zip [sx .. w] [sy .. h]) . fst) poly
+    points = zip [sx .. w] [sy .. h]
+    before = length $ filter (not . corner . at m) $ filter (`elem` poly) $ takeWhile (`M.notMember` acc) points
+    after = case dropWhile (`M.notMember` acc) points of
+        [] -> 0
+        p : _ -> acc M.! p
+    direction = before + after
     corner c = c == 'L' || c == '7'
 
+intersections :: M.Map (Int, Int) Int -> Int
+intersections = M.size . M.filter odd
+
 part1 :: String -> String
-part1 input = show $ (`div` 2) $ length $ dfs m [(sx, sy)] []
+part1 input = show $ (`div` 2) $ length $ bfs m [(sx, sy)] []
   where
     m = lines input
     (sx, sy) = findS m
 
 part2 :: String -> String
-part2 input = show $ length inner
+part2 input = show $ intersections inner
   where
     m = lines input
     (sx, sy) = findS m
     m' = replaceAt m (sx, sy) $ replaceS m (sx, sy)
-    poly = dfs m' [(sx, sy)] []
+    poly = bfs m' [(sx, sy)] []
     xMin = minimum $ map fst poly
     xMax = maximum $ map fst poly
     yMin = minimum $ map snd poly
     yMax = maximum $ map snd poly
-    points = [(x, y) | x <- [xMin .. xMax], y <- [yMin .. yMax], (x, y) `notElem` poly]
-    inner = filter (isInPolygon (mkMap m' poly) (xMax, yMax)) points
+    points = reverse [(x, y) | x <- [xMin .. xMax], y <- [yMin .. yMax], (x, y) `notElem` poly]
+    inner = foldl (mkCrosses m' poly (xMax, yMax)) M.empty points
 
 solve :: String -> String
 solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
