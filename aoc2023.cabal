@@ -365,6 +365,7 @@ test-suite spec
       TestDay10
       TestDay11
       TestDay12
+      TestDay13
       Paths_aoc2023
   autogen-modules:
       Paths_aoc2023
