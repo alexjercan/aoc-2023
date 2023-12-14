@@ -22,11 +22,11 @@ updateCellDown x _ = x
 
 updateRow :: [String] -> String -> [String]
 updateRow [] _ = []
-updateRow (m:ms) n = zipWith updateCellDown n m : zipWith updateCellUp n m : ms
+updateRow (m : ms) n = zipWith updateCellDown n m : zipWith updateCellUp n m : ms
 
 step :: [String] -> [String]
 step [] = []
-step (m:ms) = reverse $ foldl updateRow [m] ms
+step (m : ms) = reverse $ foldl updateRow [m] ms
 
 check :: [String] -> Bool
 check m = m == step m
@@ -35,28 +35,29 @@ simulate :: [String] -> [String]
 simulate = until check step
 
 load :: [String] -> Int
-load = sum . zipWith (*) [1..] . map (length . filter (== 'O')) . reverse
+load = sum . zipWith (*) [1 ..] . map (length . filter (== 'O')) . reverse
 
 part1 :: String -> String
 part1 = show . load . simulate . lines
 
 spinCycle :: [String] -> [String]
-spinCycle m = transpose . reverse $ m4
-    where m1 = simulate m
-          m2 = simulate . transpose . reverse $ m1
-          m3 = simulate . transpose . reverse $ m2
-          m4 = simulate . transpose . reverse $ m3
+spinCycle =
+    (transpose . reverse)
+        . (simulate . transpose . reverse)
+        . (simulate . transpose . reverse)
+        . (simulate . transpose . reverse)
+        . simulate
 
-findCycle :: Eq a => [a] -> ([a], [a])
+findCycle :: (Eq a) => [a] -> ([a], [a])
 findCycle xs = break (== y) ys
-    where
-        ys = reverse $ foldlUntil (flip elem) (flip (:)) [] xs
-        y = xs !! length ys
+  where
+    ys = reverse $ foldlUntil (flip elem) (flip (:)) [] xs
+    y = xs !! length ys
 
 part2 :: String -> String
 part2 input = show $ load $ cs !! ((1000000000 - length pre) `mod` length cs)
-    where
-        (pre, cs) = findCycle $ iterate spinCycle $ lines input
+  where
+    (pre, cs) = findCycle $ iterate spinCycle $ lines input
 
 solve :: String -> String
 solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
