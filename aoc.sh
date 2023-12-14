@@ -66,3 +66,6 @@ stack exec day12 < input/day12.input
 
 echo -e "${IRed}--- Day 13: Point of Incidence ---${Color_Off}"
 stack exec day13 < input/day13.input
+
+echo -e "${IYellow}--- Day 14: Parabolic Reflector Dish ---${Color_Off}"
+stack exec day14 < input/day14.input
