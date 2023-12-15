@@ -27,6 +27,7 @@ executable day01
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day02
@@ -41,6 +42,7 @@ executable day02
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day03
@@ -53,6 +55,7 @@ executable day03
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day04
@@ -67,6 +70,7 @@ executable day04
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day05
@@ -79,6 +83,7 @@ executable day05
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day06
@@ -91,6 +96,7 @@ executable day06
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day07
@@ -103,6 +109,7 @@ executable day07
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day08
@@ -117,6 +124,7 @@ executable day08
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day09
@@ -129,6 +137,7 @@ executable day09
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day10
@@ -141,6 +150,7 @@ executable day10
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day11
@@ -153,6 +163,7 @@ executable day11
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day12
@@ -165,6 +176,7 @@ executable day12
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day13
@@ -177,6 +189,7 @@ executable day13
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day14
@@ -189,10 +202,13 @@ executable day14
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day15
   main-is: Day15.hs
+  other-modules:
+      Util.Parser
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day15
@@ -201,6 +217,7 @@ executable day15
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day16
@@ -213,6 +230,7 @@ executable day16
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day17
@@ -225,6 +243,7 @@ executable day17
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day18
@@ -237,6 +256,7 @@ executable day18
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day19
@@ -249,6 +269,7 @@ executable day19
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day20
@@ -261,6 +282,7 @@ executable day20
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day21
@@ -273,6 +295,7 @@ executable day21
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day22
@@ -285,6 +308,7 @@ executable day22
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day23
@@ -297,6 +321,7 @@ executable day23
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day24
@@ -309,6 +334,7 @@ executable day24
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 executable day25
@@ -321,6 +347,7 @@ executable day25
     , containers
     , parsec
     , split
+    , vector
   default-language: Haskell2010
 
 test-suite spec
@@ -367,6 +394,7 @@ test-suite spec
       TestDay12
       TestDay13
       TestDay14
+      TestDay15
       Paths_aoc2023
   autogen-modules:
       Paths_aoc2023
@@ -380,4 +408,5 @@ test-suite spec
     , hspec
     , parsec
     , split
+    , vector
   default-language: Haskell2010

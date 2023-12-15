@@ -16,6 +16,7 @@ dependencies:
   - split
   - parsec
   - containers
+  - vector
 
 ghc-options:
 - -Wall
@@ -102,7 +103,7 @@ executables:
   day15:
     source-dirs:     src
     main:            Day15
-    other-modules:   []
+    other-modules:   [Util.Parser]
 
   day16:
     source-dirs:     src
