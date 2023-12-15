@@ -52,8 +52,6 @@ simulate = foldl operation (V.replicate 256 [])
 power :: V.Vector [(String, Int)] -> Int
 power = V.sum . V.imap (\i -> sum . zipWith (\j (_, x) -> (i + 1) * j * x) [1 ..])
 
-input = "rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7"
-
 part2 :: String -> String
 part2 = show . power . simulate . parse operationsP
 
