@@ -28,11 +28,11 @@ parse input = (grid, w, h)
     w = length $ head $ lines input
     h = length $ lines input
 
-move :: Pos -> Dir -> (Pos, Dir)
-move (row, col) N = ((row - 1, col), N)
-move (row, col) E = ((row, col + 1), E)
-move (row, col) S = ((row + 1, col), S)
-move (row, col) W = ((row, col - 1), W)
+emptyC :: Pos -> Dir -> (Pos, Dir)
+emptyC (row, col) N = ((row - 1, col), N)
+emptyC (row, col) E = ((row, col + 1), E)
+emptyC (row, col) S = ((row + 1, col), S)
+emptyC (row, col) W = ((row, col - 1), W)
 
 mirrorS :: Pos -> Dir -> (Pos, Dir)
 mirrorS (row, col) N = ((row, col + 1), E)
@@ -58,16 +58,15 @@ splitterV (row, col) E = [((row - 1, col), N), ((row + 1, col), S)]
 splitterV (row, col) S = [((row + 1, col), S)]
 splitterV (row, col) W = [((row - 1, col), N), ((row + 1, col), S)]
 
-valid :: Pos -> Grid -> Bool
-valid (row, col) (_, w, h) = row >= 0 && row < h && col >= 0 && col < w
-
 step :: Grid -> (Pos, Dir) -> [(Pos, Dir)]
-step grid@(m, _, _) (p, dir) = filter ((`valid` grid) . fst) $ case m M.! p of
-    Empty -> [move p dir]
+step (m, w, h) (p, dir) = filter (valid . fst) $ case m M.! p of
+    Empty -> [emptyC p dir]
     MirrorS -> [mirrorS p dir]
     MirrorB -> [mirrorB p dir]
     SplitterH -> splitterH p dir
     SplitterV -> splitterV p dir
+  where
+    valid (row, col) = row >= 0 && row < h && col >= 0 && col < w
 
 simulate :: (Pos, Dir) -> Grid -> Int
 simulate start grid = go (S.singleton start) [start]
