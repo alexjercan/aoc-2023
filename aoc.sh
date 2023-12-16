@@ -72,3 +72,6 @@ stack exec day14 < input/day14.input
 
 echo -e "${IGreen}--- Day 15: Lens Library ---${Color_Off}"
 stack exec day15 < input/day15.input
+
+echo -e "${IYellow}--- Day 16: The Floor Will Be Lava ---${Color_Off}"
+stack exec day16 < input/day16.input
