@@ -4,10 +4,10 @@ import Control.Monad.State (
     MonadState (get, put),
     State,
     evalState,
-    forM_,
     modify,
  )
 import qualified Data.Map as M
+import Data.Foldable (forM_)
 import Data.Maybe (fromJust)
 import qualified Data.PSQueue as P
 import qualified Data.Set as S
