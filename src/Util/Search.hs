@@ -6,8 +6,8 @@ import Control.Monad.State (
     evalState,
     modify,
  )
-import qualified Data.Map as M
 import Data.Foldable (forM_)
+import qualified Data.Map as M
 import Data.Maybe (fromJust)
 import qualified Data.PSQueue as P
 import qualified Data.Set as S
