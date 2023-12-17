@@ -47,8 +47,11 @@ neighbors' g@(m, _, _) p@(DState _ d n) = map (\p'@(DState (r', c') _ _) -> (m !
 targetP' :: Grid -> DState -> Bool
 targetP' (_, w, h) (DState (r, c) _ n) = r == h - 1 && c == w - 1 && n >= 4
 
+answer' :: Grid -> M.Map DState Int -> M.Map DState DState -> Int
+answer' grid dist _ = minimum $ M.filterWithKey (\a _ -> targetP' grid a) dist
+
 part2 :: String -> String
-part2 input = show $ minimum $ map (\start -> dijkstra start (targetP' grid) (neighbors' grid) (answer grid)) starts
+part2 input = show $ minimum $ map (\start -> dijkstra start (targetP' grid) (neighbors' grid) (answer' grid)) starts
   where
     grid = parse input
     starts = [DState (0, 0) D 1, DState (0, 0) R 1]
