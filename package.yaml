@@ -17,6 +17,8 @@ dependencies:
   - parsec
   - containers
   - vector
+  - mtl
+  - PSQueue
 
 ghc-options:
 - -Wall

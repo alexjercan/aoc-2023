@@ -23,8 +23,10 @@ executable day01
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day01
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -38,8 +40,10 @@ executable day02
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day02
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -51,8 +55,10 @@ executable day03
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day03
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -66,8 +72,10 @@ executable day04
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day04
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -79,8 +87,10 @@ executable day05
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day05
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -92,8 +102,10 @@ executable day06
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day06
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -105,8 +117,10 @@ executable day07
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day07
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -120,8 +134,10 @@ executable day08
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day08
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -133,8 +149,10 @@ executable day09
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day09
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -146,8 +164,10 @@ executable day10
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day10
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -159,8 +179,10 @@ executable day11
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day11
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -172,8 +194,10 @@ executable day12
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day12
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -185,8 +209,10 @@ executable day13
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day13
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -198,8 +224,10 @@ executable day14
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day14
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -213,8 +241,10 @@ executable day15
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day15
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -226,8 +256,10 @@ executable day16
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day16
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -239,8 +271,10 @@ executable day17
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day17
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -252,8 +286,10 @@ executable day18
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day18
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -265,8 +301,10 @@ executable day19
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day19
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -278,8 +316,10 @@ executable day20
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day20
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -291,8 +331,10 @@ executable day21
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day21
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -304,8 +346,10 @@ executable day22
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day22
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -317,8 +361,10 @@ executable day23
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day23
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -330,8 +376,10 @@ executable day24
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day24
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -343,8 +391,10 @@ executable day25
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day25
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
+    , mtl
     , parsec
     , split
     , vector
@@ -380,6 +430,7 @@ test-suite spec
       Day24
       Day25
       Util.Parser
+      Util.Search
       TestDay01
       TestDay02
       TestDay03
@@ -396,6 +447,7 @@ test-suite spec
       TestDay14
       TestDay15
       TestDay16
+      TestDay17
       Paths_aoc2023
   autogen-modules:
       Paths_aoc2023
@@ -404,9 +456,11 @@ test-suite spec
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      PSQueue
+    , base >=4.7 && <5
     , containers
     , hspec
+    , mtl
     , parsec
     , split
     , vector
