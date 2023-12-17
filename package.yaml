@@ -115,7 +115,7 @@ executables:
   day17:
     source-dirs:     src
     main:            Day17
-    other-modules:   []
+    other-modules:   [Util.Search]
 
   day18:
     source-dirs:     src

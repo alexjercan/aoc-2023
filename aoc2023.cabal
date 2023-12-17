@@ -267,6 +267,8 @@ executable day16
 
 executable day17
   main-is: Day17.hs
+  other-modules:
+      Util.Search
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day17
