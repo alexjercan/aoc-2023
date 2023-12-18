@@ -7,11 +7,7 @@ import Util.Parser (Parser, parse)
 
 data Dir = U | D | L | R deriving (Show, Eq)
 
-data DigPlan = DigPlan
-    { dir :: Dir
-    , len :: Int
-    }
-    deriving (Show, Eq)
+data DigPlan = DigPlan Dir Int deriving (Show, Eq)
 
 dirP :: Parser Dir
 dirP =
