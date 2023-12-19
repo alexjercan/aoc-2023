@@ -125,7 +125,7 @@ executables:
   day19:
     source-dirs:     src
     main:            Day19
-    other-modules:   []
+    other-modules:   [Util.Parser]
 
   day20:
     source-dirs:     src

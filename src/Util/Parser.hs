@@ -1,4 +1,4 @@
-module Util.Parser where
+module Util.Parser (Parser, parse) where
 
 import Text.Parsec (Parsec)
 import qualified Text.Parsec as P

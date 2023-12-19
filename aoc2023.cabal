@@ -301,6 +301,8 @@ executable day18
 
 executable day19
   main-is: Day19.hs
+  other-modules:
+      Util.Parser
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day19
@@ -453,6 +455,7 @@ test-suite spec
       TestDay16
       TestDay17
       TestDay18
+      TestDay19
       Paths_aoc2023
   autogen-modules:
       Paths_aoc2023

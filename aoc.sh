@@ -81,3 +81,6 @@ stack exec day17 < input/day17.input
 
 echo -e "${IYellow}--- Day 18: Lavaduct Lagoon ---${Color_Off}"
 stack exec day18 < input/day18.input
+
+echo -e "${IGreen}--- Day 19: Aplenty ---${Color_Off}"
+stack exec day19 < input/day19.input
