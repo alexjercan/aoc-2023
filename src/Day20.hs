@@ -1,11 +1,12 @@
-{-# LANGUAGE TupleSections #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE TupleSections #-}
+
 module Day20 (main, part1, part2) where
 
-import Util.Parser (Parser, parse)
-import qualified Text.Parsec as P
+import Control.Monad.State (State, evalState, gets, modify)
 import qualified Data.Map as M
-import Control.Monad.State (State, gets, modify, evalState)
+import qualified Text.Parsec as P
+import Util.Parser (Parser, parse)
 
 type Name = String
 data Module
@@ -63,10 +64,10 @@ modulesP = P.many1 (moduleP <* P.spaces) <* P.eof
 
 initialState :: [Module] -> M.Map Name (Module, ModuleState)
 initialState modules = M.fromList $ map (\m -> (name m, (m, go m))) modules
-    where
-        go Broadcaster{} = BroadcasterState
-        go (FlipFlop _ _) = FlipFlopState Off
-        go (Conjunction n _) = ConjunctionState (M.fromList $ map ((,Low) . name) $ parents n modules)
+  where
+    go Broadcaster{} = BroadcasterState
+    go (FlipFlop _ _) = FlipFlopState Off
+    go (Conjunction n _) = ConjunctionState (M.fromList $ map ((,Low) . name) $ parents n modules)
 
 type MachineState = State (M.Map Name (Module, ModuleState))
 
@@ -90,26 +91,26 @@ applyOneM (n, n', s) = do
             return $ map (,n,if all (== High) $ M.elems m' then Low else High) ns
         _ -> return []
 
-applyM :: [(Name, Name, Signal)]  -> MachineState [(Name, Name, Signal)]
+applyM :: [(Name, Name, Signal)] -> MachineState [(Name, Name, Signal)]
 applyM xs = concat <$> mapM applyOneM xs
 
 buttonM :: MachineState (Int, Int)
-buttonM = go [("broadcaster","button", Low)]
-    where
-        go [] = return (0, 0)
-        go xs = do
-            (l, h) <- applyM xs >>= go
-            let l' = length $ filter (\(_, _, s) -> s == Low) xs
-            let h' = length $ filter (\(_, _, s) -> s == High) xs
-            return (l + l', h + h')
+buttonM = go [("broadcaster", "button", Low)]
+  where
+    go [] = return (0, 0)
+    go xs = do
+        (l, h) <- applyM xs >>= go
+        let l' = length $ filter (\(_, _, s) -> s == Low) xs
+        let h' = length $ filter (\(_, _, s) -> s == High) xs
+        return (l + l', h + h')
 
 buttonNM :: Int -> MachineState Int
 buttonNM n = go n 0 0
-    where
-        go 0 l h = return $ l * h
-        go i l h = do
-            (l', h') <- buttonM
-            go (i - 1) (l + l') (h + h')
+  where
+    go 0 l h = return $ l * h
+    go i l h = do
+        (l', h') <- buttonM
+        go (i - 1) (l + l') (h + h')
 
 simulate :: Int -> [Module] -> Int
 simulate n ms = evalState (buttonNM n) (initialState ms)
@@ -118,27 +119,29 @@ part1 :: String -> String
 part1 = show . simulate 1000 . parse modulesP
 
 buttonStateM :: Name -> Signal -> MachineState Bool
-buttonStateM n s = go [("broadcaster","button", Low)]
-    where
-        go [] = return False
-        go xs = if any (\(n', _, s') -> n == n' && s == s') xs
-                    then return True
-                    else applyM xs >>= go
+buttonStateM n s = go [("broadcaster", "button", Low)]
+  where
+    go [] = return False
+    go xs =
+        if any (\(n', _, s') -> n == n' && s == s') xs
+            then return True
+            else applyM xs >>= go
 
 buttonStateNM :: Name -> Signal -> MachineState Int
 buttonStateNM n s = go 1
-    where
-        go c = buttonStateM n s >>= \case
-                True -> return c
-                False -> go (c + 1)
+  where
+    go c =
+        buttonStateM n s >>= \case
+            True -> return c
+            False -> go (c + 1)
 
 simulate' :: Name -> Signal -> [Module] -> Int
 simulate' n s ms = evalState (buttonStateNM n s) (initialState ms)
 
 solution :: Name -> Signal -> [Module] -> Int
 solution n s ms = minimum $ map (\n' -> foldl1 lcm $ map ((\n'' -> simulate' n'' s ms) . name) (parents n' ms)) ps
-    where
-        ps = map name $ parents n ms
+  where
+    ps = map name $ parents n ms
 
 part2 :: String -> String
 part2 = show . solution "rx" Low . parse modulesP
