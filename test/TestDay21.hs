@@ -7,7 +7,7 @@ input :: String
 input = "...........\n.....###.#.\n.###.##..#.\n..#.#...#..\n....#.#....\n.##..S####.\n.##..#...#.\n.......##..\n.##.#.####.\n.##..##.##.\n..........."
 
 test1 :: Expectation
-test1 = part1 input `shouldBe` "42"
+test1 = part1 input `shouldBe` "2665"
 
 test2 :: Expectation
 test2 = part2 input `shouldBe` "528192899606863"
