@@ -87,3 +87,6 @@ stack exec day19 < input/day19.input
 
 echo -e "${IYellow}--- Day 20: Pulse Propagation ---${Color_Off}"
 stack exec day20 < input/day20.input
+
+echo -e "${IRed}--- Day 21: Step Counter ---${Color_Off}"
+stack exec day21 < input/day21.input
