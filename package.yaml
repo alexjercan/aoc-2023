@@ -140,7 +140,7 @@ executables:
   day22:
     source-dirs:     src
     main:            Day22
-    other-modules:   []
+    other-modules:   [Util.Parser]
 
   day23:
     source-dirs:     src
