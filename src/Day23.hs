@@ -1,5 +1,6 @@
 module Day23 (main, part1, part2) where
 
+import Control.Monad.State
 import qualified Data.Map as M
 import Data.Maybe (mapMaybe)
 import qualified Data.Set as S
@@ -60,31 +61,44 @@ edge grid t p l neighborsF visited
         [n] -> edge grid t n (l + 1) neighborsF (S.insert p visited)
         _ -> Just (p, l)
 
-graph :: Grid -> (Position, Dir) -> (Position, Dir) -> ((Position, Dir) -> [(Position, Dir)]) -> S.Set (Position, Dir) -> M.Map (Position, Dir) [((Position, Dir), Int)]
-graph grid t p neighborsF visited
-    | p `S.member` visited = M.empty
-    | otherwise = case mapMaybe (\n -> edge grid t n 1 neighborsF (S.insert p visited)) (filter (`S.notMember` visited) $ neighborsF p) of
-        [] -> M.empty
-        ns -> M.insert p ns $ M.unions $ map (\(n, _) -> graph grid t n neighborsF (S.insert p visited)) ns
+type GState = State (S.Set (Position, Dir))
 
-dfs :: M.Map (Position, Dir) [((Position, Dir), Int)] -> (Position, Dir) -> (Position, Dir) -> S.Set (Position, Dir) -> Int
-dfs gs p t visited
-    | p == t = 0
-    | otherwise = case M.lookup p gs of
-        Nothing -> 0
-        Just ns -> maximum (map (\(p', l) -> l + dfs gs p' t (S.insert p' visited)) ns)
+graphM :: Grid -> (Position, Dir) -> (Position, Dir) -> ((Position, Dir) -> [(Position, Dir)]) -> GState (M.Map (Position, Dir) [((Position, Dir), Int)])
+graphM grid t p neighborsF = do
+    visited <- get
+    if p `S.member` visited
+        then return M.empty
+        else do
+            put $ S.insert p visited
+            case mapMaybe (\n -> edge grid t n 1 neighborsF (S.singleton p)) (neighborsF p) of
+                [] -> return M.empty
+                ns -> do
+                    m <- M.unions <$> mapM (\(n, _) -> graphM grid t n neighborsF) ns
+                    return $ M.insert p ns m
+
+dfs :: (Position, Dir) -> M.Map (Position, Dir) [((Position, Dir), Int)] -> (Position, Dir) -> [(Position, Dir)] -> Int -> Int
+dfs current graph target visited maxLength =
+    let ns = filter (\(neighbor, _) -> neighbor `notElem` visited) $ M.findWithDefault [] current graph
+     in if null ns || current == target
+            then maxLength
+            else
+                maximum $
+                    [dfs neighbor graph target (neighbor : visited) (maxLength + weight) | (neighbor, weight) <- ns]
+
+longestPath :: M.Map (Position, Dir) [((Position, Dir), Int)] -> (Position, Dir) -> (Position, Dir) -> Int
+longestPath graph start end = dfs start graph end [start] 0
 
 part1 :: String -> String
-part1 input = show $ dfs gs starting target S.empty
+part1 input = show $ longestPath gs starting target
   where
     (starting, target, grid) = parse input
-    gs = graph grid target starting (neighbors grid) S.empty
+    gs = evalState (graphM grid target starting (neighbors grid)) S.empty
 
 part2 :: String -> String
-part2 input = show $ dfs gs starting target S.empty
+part2 input = show $ longestPath gs starting target
   where
     (starting, target, grid) = parse' input
-    gs = graph grid target starting (neighbors grid) S.empty
+    gs = evalState (graphM grid target starting (neighbors grid)) S.empty
 
 solve :: String -> String
 solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
