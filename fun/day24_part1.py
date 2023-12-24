@@ -54,5 +54,4 @@ if __name__ == "__main__":
     # Part 1
     xs = parse(input_str)
 
-    print(xs)
     print(part1(xs))

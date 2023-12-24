@@ -3,16 +3,16 @@ module Day24 (main, part1, part2) where
 import Util.Parser (Parser, parse)
 import qualified Text.Parsec as P
 
-type Vec3 = (Double, Double, Double)
+type Vec3 = (Integer, Integer, Integer)
 type Particle = (Vec3, Vec3)
 
-negP :: Parser Double
+negP :: Parser Integer
 negP = negate . read <$> (P.char '-' *> P.many1 P.digit)
 
-posP :: Parser Double
+posP :: Parser Integer
 posP = read <$> P.many1 P.digit
 
-numP :: Parser Double
+numP :: Parser Integer
 numP = negP P.<|> posP
 
 vec3P :: Parser Vec3
@@ -38,8 +38,8 @@ intersect ((x1, y1, _), (dx1, dy1, _)) ((x2, y2, _), (dx2, dy2, _)) =
         det (a, b) = fst a * snd b - snd a * fst b
         div' = det (xdiff, ydiff)
         d = (det ((x1, y1), (x1 + dx1, y1 + dy1)), det ((x2, y2), (x2 + dx2, y2 + dy2)))
-        x = det (d, xdiff) / div'
-        y = det (d, ydiff) / div'
+        x = det (d, xdiff) `div` div'
+        y = det (d, ydiff) `div` div'
     in  div' /= 0
         && 200000000000000 <= x && x <= 400000000000000 && 200000000000000 <= y && y <= 400000000000000
         && (x - x1 > 0) == (dx1 > 0) && (y - y1 > 0) == (dy1 > 0)
