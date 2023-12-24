@@ -1,7 +1,12 @@
+{-# LANGUAGE LambdaCase #-}
+
 module Day24 (main, part1, part2) where
 
 import Util.Parser (Parser, parse)
 import qualified Text.Parsec as P
+import Control.Monad (forM_)
+import Data.Maybe (fromJust)
+import Z3.Monad
 
 type Vec3 = (Integer, Integer, Integer)
 type Particle = (Vec3, Vec3)
@@ -55,11 +60,55 @@ solution particles = length $ filter (uncurry intersect) $ combinations2 particl
 part1 :: String -> String
 part1 = show . solution . parse inputP
 
+script :: [Particle] -> Z3 (Maybe Integer)
+script particles = do
+    x <- mkFreshIntVar "x"
+    y <- mkFreshIntVar "y"
+    z <- mkFreshIntVar "z"
+    dx <- mkFreshIntVar "dx"
+    dy <- mkFreshIntVar "dy"
+    dz <- mkFreshIntVar "dz"
+
+    forM_ (zip particles [0..]) $ \(((xi, yi, zi), (dxi, dyi, dzi)), i) -> do
+        ti <- mkFreshIntVar ("t" ++ (show :: Integer -> String) i)
+
+        xi' <- mkInteger xi
+        yi' <- mkInteger yi
+        zi' <- mkInteger zi
+        dxi' <- mkInteger dxi
+        dyi' <- mkInteger dyi
+        dzi' <- mkInteger dzi
+
+        dxti <- mkMul [dx, ti]
+        lhsX <- (mkAdd [x, dxti])
+        dxiti <- mkMul [dxi', ti]
+        rhsX <- (mkAdd [xi', dxiti])
+        assert =<< mkEq lhsX rhsX
+
+        dyti <- mkMul [dy, ti]
+        lhsY <- (mkAdd [y, dyti])
+        dyiti <- mkMul [dyi', ti]
+        rhsY <- (mkAdd [yi', dyiti])
+        assert =<< mkEq lhsY rhsY
+
+        dzti <- mkMul [dz, ti]
+        lhsZ <- (mkAdd [z, dzti])
+        dziti <- mkMul [dzi', ti]
+        rhsZ <- (mkAdd [zi', dziti])
+        assert =<< mkEq lhsZ rhsZ
+
+    sumXYZ <- mkAdd [x, y, z]
+
+    snd <$> (withModel $ \m -> fromJust <$> (evalInt m sumXYZ))
+
 part2 :: String -> String
 part2 = const ""
 
-solve :: String -> String
-solve input = "Part 1: " ++ part1 input ++ "\nPart 2: " ++ part2 input ++ "\n"
-
 main :: IO ()
-main = interact solve
+main = do
+    input <- getContents
+    putStrLn $ "Part 1: " ++ part1 input
+    let particles = parse inputP input
+    evalZ3 (script particles) >>= \case
+        Just x -> putStrLn $ "Part 2: " ++ show x
+        Nothing -> putStrLn "No solution"

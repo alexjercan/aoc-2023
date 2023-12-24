@@ -395,6 +395,7 @@ executable day24
     , parsec
     , split
     , vector
+    , z3
   default-language: Haskell2010
 
 executable day25
