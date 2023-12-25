@@ -19,6 +19,8 @@ dependencies:
   - vector
   - mtl
   - PSQueue
+  - z3
+  - random
 
 ghc-options:
 - -Wall
