@@ -491,7 +491,6 @@ test-suite spec
       Day23
       Day24
       Day25
-      Util.Graph
       Util.Parser
       Util.Search
       TestDay01
