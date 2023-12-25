@@ -24,6 +24,7 @@ import TestDay21
 import TestDay22
 import TestDay23
 import TestDay24
+import TestDay25
 
 main :: IO ()
 main = do
@@ -51,3 +52,4 @@ main = do
     TestDay22.test
     TestDay23.test
     TestDay24.test
+    TestDay25.test
