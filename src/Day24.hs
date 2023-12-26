@@ -4,8 +4,7 @@ module Day24 (main, part1, part2) where
 
 import Util.Parser (Parser, parse)
 import qualified Text.Parsec as P
-import Control.Monad (forM_)
-import Data.Maybe (fromJust)
+import Control.Monad (forM_, join)
 import Z3.Monad
 
 type Vec3 = (Integer, Integer, Integer)
@@ -99,16 +98,16 @@ script particles = do
 
     sumXYZ <- mkAdd [x, y, z]
 
-    snd <$> (withModel $ \m -> fromJust <$> (evalInt m sumXYZ))
+    join . snd <$> (withModel $ \m -> (evalInt m sumXYZ))
 
-part2 :: String -> String
-part2 = const ""
+part2 :: String -> IO String
+part2 input = evalZ3 (script $ parse inputP input) >>= \case
+        Just x -> return $ show x
+        Nothing -> return "No solution"
 
 main :: IO ()
 main = do
     input <- getContents
     putStrLn $ "Part 1: " ++ part1 input
-    let particles = parse inputP input
-    evalZ3 (script particles) >>= \case
-        Just x -> putStrLn $ "Part 2: " ++ show x
-        Nothing -> putStrLn "No solution"
+    result <- part2 input
+    putStrLn $ "Part 2: " ++ result

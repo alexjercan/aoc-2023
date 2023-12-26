@@ -447,6 +447,8 @@ executable day24
 
 executable day25
   main-is: Day25.hs
+  other-modules:
+      Util.Parser
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is Day25

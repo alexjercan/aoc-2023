@@ -10,7 +10,7 @@ test1 :: Expectation
 test1 = part1 input `shouldBe` "0"
 
 test2 :: Expectation
-test2 = part2 input `shouldBe` ""
+test2 = (part2 input) >>= shouldBe "47"
 
 test :: IO ()
 test = hspec $ do

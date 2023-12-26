@@ -157,7 +157,7 @@ executables:
   day25:
     source-dirs:     src
     main:            Day25
-    other-modules:   []
+    other-modules:   [Util.Parser]
 
 tests:
   spec:
