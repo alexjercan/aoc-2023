@@ -20,4 +20,3 @@ test = hspec $ do
 
         describe "part2" $ do
             it "should work for the examples" test2
-
