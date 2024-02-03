@@ -19,7 +19,7 @@
 # resolver: https://example.com/snapshots/2023-01-01.yaml
 # resolver:
 #  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/21/19.yaml
-resolver: lts-22.3
+resolver: lts-22.8
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
